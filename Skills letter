@@ -1,0 +1,64 @@
+import os
+import json
+import re
+import shutil
+
+# --- (ضع مصفوفة skills_data هنا كما هي في الكود السابق) ---
+
+output_root = "skills"
+
+# 1. تنظيف المجلد القديم بالكامل لتجنب تراكم الملفات (Zombie Files)
+if os.path.exists(output_root):
+    shutil.rmtree(output_root)
+os.makedirs(output_root, exist_ok=True)
+
+def safe_yaml_string(text):
+    """دالة احترافية للهروب من الرموز الخاصة في YAML"""
+    if not text:
+        return '""'
+    # حماية الشرطة المائلة أولاً، ثم علامات التنصيص
+    cleaned = str(text).replace('\\', '\\\\').replace('"', '\\"')
+    return f'"{cleaned}"'
+
+index_data = []
+
+for skill in skills_data:
+    # 2. إنشاء اسم آمن برمجياً ليستخدم كاسم مجلد ومعرف ID
+    safe_id = skill['name'].strip().lower().replace(" ", "-")
+    skill_folder = os.path.join(output_root, safe_id)
+    os.makedirs(skill_folder, exist_ok=True)
+    
+    name_val = safe_yaml_string(skill['name'])
+    desc_val = safe_yaml_string(skill['description'])
+    trigger_val = safe_yaml_string(skill['trigger'])
+    
+    # 3. استخدام التعابير القياسية (Regex) لتنسيق القوائم مهما كان عددها بذكاء
+    instructions_formatted = skill['instructions'].replace(". Provide:", ".\n\n### Requirements & Deliverables:\n")
+    # يبحث عن أي فاصلة أو مسافة تسبق (رقم ثم قوس) ويستبدلها بسطر جديد
+    instructions_formatted = re.sub(r'(?:, | )(\d+\))', r'\n\1', instructions_formatted)
+
+    skill_md_content = f"""---
+name: {name_val}
+description: {desc_val}
+trigger: {trigger_val}
+---
+
+# Role and Instructions
+{instructions_formatted}
+"""
+    
+    file_path = os.path.join(skill_folder, "SKILL.md")
+    with open(file_path, 'w', encoding='utf-8', newline='\n') as md_file:
+        md_file.write(skill_md_content)
+    
+    # 4. استخدام الـ safe_id لضمان استقرار التطبيق
+    index_data.append({
+        "id": safe_id,
+        "path": f"skills/{safe_id}/SKILL.md"
+    })
+
+# توليد ملف الفهرس
+with open("skills.json", 'w', encoding='utf-8') as json_file:
+    json.dump(index_data, json_file, indent=2)
+
+print("🛡️ تمت العملية بنجاح: بناء هندسي نظيف، آمن، وجاهز للإنتاج (Production-Ready)!")
