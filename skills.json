@@ -1,0 +1,66 @@
+[
+  {
+    "id": "erp-module-architect",
+    "path": "https://raw.githubusercontent.com/waelstark/gemma-architect-skills/main/skills/erp-module-architect/SKILL.md"
+  },
+  {
+    "id": "workflow-engine-designer",
+    "path": "https://raw.githubusercontent.com/waelstark/gemma-architect-skills/main/skills/workflow-engine-designer/SKILL.md"
+  },
+  {
+    "id": "financial-architect",
+    "path": "https://raw.githubusercontent.com/waelstark/gemma-architect-skills/main/skills/financial-architect/SKILL.md"
+  },
+  {
+    "id": "rbac-advanced-architect",
+    "path": "https://raw.githubusercontent.com/waelstark/gemma-architect-skills/main/skills/rbac-advanced-architect/SKILL.md"
+  },
+  {
+    "id": "audit-compliance-architect",
+    "path": "https://raw.githubusercontent.com/waelstark/gemma-architect-skills/main/skills/audit-compliance-architect/SKILL.md"
+  },
+  {
+    "id": "master-data-architect",
+    "path": "https://raw.githubusercontent.com/waelstark/gemma-architect-skills/main/skills/master-data-architect/SKILL.md"
+  },
+  {
+    "id": "integration-hub-architect",
+    "path": "https://raw.githubusercontent.com/waelstark/gemma-architect-skills/main/skills/integration-hub-architect/SKILL.md"
+  },
+  {
+    "id": "inventory-warehouse-architect",
+    "path": "https://raw.githubusercontent.com/waelstark/gemma-architect-skills/main/skills/inventory-warehouse-architect/SKILL.md"
+  },
+  {
+    "id": "batch-job-architect",
+    "path": "https://raw.githubusercontent.com/waelstark/gemma-architect-skills/main/skills/batch-job-architect/SKILL.md"
+  },
+  {
+    "id": "erp-reporting-architect",
+    "path": "https://raw.githubusercontent.com/waelstark/gemma-architect-skills/main/skills/erp-reporting-architect/SKILL.md"
+  },
+  {
+    "id": "erp-localization-architect",
+    "path": "https://raw.githubusercontent.com/waelstark/gemma-architect-skills/main/skills/erp-localization-architect/SKILL.md"
+  },
+  {
+    "id": "performance-optimizer",
+    "path": "https://raw.githubusercontent.com/waelstark/gemma-architect-skills/main/skills/performance-optimizer/SKILL.md"
+  },
+  {
+    "id": "error-logging-architect",
+    "path": "https://raw.githubusercontent.com/waelstark/gemma-architect-skills/main/skills/error-logging-architect/SKILL.md"
+  },
+  {
+    "id": "caching-architect",
+    "path": "https://raw.githubusercontent.com/waelstark/gemma-architect-skills/main/skills/caching-architect/SKILL.md"
+  },
+  {
+    "id": "realtime-architect",
+    "path": "https://raw.githubusercontent.com/waelstark/gemma-architect-skills/main/skills/realtime-architect/SKILL.md"
+  },
+  {
+    "id": "file-media-architect",
+    "path": "https://raw.githubusercontent.com/waelstark/gemma-architect-skills/main/skills/file-media-architect/SKILL.md"
+  }
+]
